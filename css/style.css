@@ -5,6 +5,7 @@
           box-sizing: border-box;
   border: none;
   background: none;
+  max-width: 100%;
 }
 
 input {
@@ -162,5 +163,95 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+.wrapper {
+  border-bottom: 1px solid #d8d8d8;
+  overflow: auto;
+}
+
+.sticky {
+  width: 1250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  margin-top: 2.4rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.empty-column {
+  width: 25%;
+}
+
+.content {
+  margin: auto;
+  max-width: 1250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.aside {
+  width: 25%;
+}
+
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+}
+
+.tabs svg {
+  margin-right: 1rem;
+  margin-bottom: -3px;
+}
+
+.tabs svg path {
+  stroke: #aabfc1;
+}
+
+.tabs__item {
+  border-bottom: 2px solid transparent;
+  -webkit-transition: 0.4s ease-out border;
+  transition: 0.4s ease-out border;
+}
+
+.tabs__item:hover {
+  border-bottom-color: #aabfc1;
+}
+
+.tabs__item--active {
+  border-bottom-color: #f9826c;
+  font-weight: 550;
+}
+
+.tabs__item--active svg path {
+  stroke-width: 0;
+  stroke: #24292f;
+}
+
+.tabs li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: #24292f;
+}
+
+.overview {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 /*# sourceMappingURL=style.css.map */

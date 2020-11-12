@@ -1,0 +1,42 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  top: 0;
+
+  svg {
+    margin-right: 1rem;
+    margin-bottom: -3px;
+    path {
+      stroke: $grey;
+    }
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    transition: 0.4s ease-out border;
+
+    &:hover {
+      border-bottom-color: $grey;
+    }
+
+    &--active {
+      border-bottom-color: #f9826c;
+      font-weight: 550;
+
+      svg {
+        path {
+          stroke-width: 0;
+          stroke: $dark;
+        }
+      }
+    }
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: $dark;
+  }
+}
