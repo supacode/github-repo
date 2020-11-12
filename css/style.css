@@ -6,6 +6,8 @@
   border: none;
   background: none;
   max-width: 100%;
+  font-weight: normal;
+  font-size: 100%;
 }
 
 input {
@@ -183,7 +185,7 @@ body {
 }
 
 .empty-column {
-  width: 25%;
+  width: 23%;
 }
 
 .content {
@@ -195,7 +197,37 @@ body {
 }
 
 .aside {
-  width: 25%;
+  width: 23%;
+}
+
+.profile {
+  margin-top: -2.5rem;
+}
+
+.profile__avatar {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1.2rem;
+}
+
+.profile__avatar--img {
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.profile__name {
+  margin-bottom: 1rem;
+}
+
+.profile__name--name {
+  font-weight: 550;
+  font-size: 1.5rem;
+}
+
+.profile__name--username {
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 
 .tabs {
