@@ -6,7 +6,48 @@
 .repo {
   padding: 1.5rem 0;
   line-height: 2;
-  border-bottom: 1px solid #e1e4e8;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #d1d2d4;
+  }
+
+  &__search {
+    margin: 1.3rem 0;
+    width: 100%;
+    border-bottom: solid 1px #d1d2d4;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    &--input {
+      padding: 5px 12px;
+      border: solid 1px #d1d2d4;
+      border-radius: 6px;
+      align-items: center;
+      width: 71%;
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+      }
+    }
+    &--btns {
+      display: flex;
+      align-items: center;
+    }
+    &--btn {
+      background: #fafbfc;
+      margin-left: 0.5rem;
+      border-radius: 6px;
+      padding: 5px 16px;
+      display: flex;
+      border: 1px solid #d9dbdb;
+    }
+
+    &--dropdown-caret {
+      border-top-color: $dark;
+      margin-top: 8px;
+      margin-left: 0.5rem;
+    }
+  }
+
   &__name {
     font-size: 1.2rem;
     a {
@@ -19,17 +60,35 @@
     }
   }
 
+  &__desc {
+    font-size: 0.9rem;
+  }
+
   &__info {
+    margin-top: 0.5rem;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
   }
 
   li {
-    display: flex;
-    align-items: center;
     margin-right: 1.4rem;
     font-size: 14px;
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &:hover {
+      color: $blue;
+
+      svg {
+        path {
+          fill: $blue;
+        }
+      }
+    }
   }
 
   &__tag {
