@@ -303,7 +303,7 @@ body {
 }
 
 .repo {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   line-height: 2;
 }
 
@@ -331,21 +331,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 71%;
+  width: 100%;
 }
 
 .repo__search--input:focus {
   -webkit-box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
           box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.repo__search--btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .repo__search--btn {
@@ -380,7 +371,7 @@ body {
 }
 
 .repo__desc {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .repo__info {

@@ -4,7 +4,7 @@
 }
 
 .repo {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   line-height: 2;
 
   &:not(:last-child) {
@@ -23,15 +23,12 @@
       border: solid 1px #d1d2d4;
       border-radius: 6px;
       align-items: center;
-      width: 71%;
+      width: 100%;
       &:focus {
         box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
       }
     }
-    &--btns {
-      display: flex;
-      align-items: center;
-    }
+
     &--btn {
       background: #fafbfc;
       margin-left: 0.5rem;
@@ -61,7 +58,7 @@
   }
 
   &__desc {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   &__info {
