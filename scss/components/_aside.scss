@@ -1,17 +1,20 @@
 .aside {
-  width: $side-column-width;
+  width: $aside-width - 3;
+  position: absolute;
+  margin: 2rem;
+  padding: 0 1rem;
 }
 
 .profile {
-  margin-top: -2.5rem;
   &__avatar {
-    width: 95%;
-    margin: auto;
+    width: 100%;
     margin-bottom: 1.2rem;
     &--img {
+      position: relative;
+      z-index: 10;
       border-radius: 50%;
       display: block;
-      margin: auto;
+      margin-bottom: 1rem;
     }
   }
 

@@ -1,6 +1,10 @@
 export const elements = {
   repoList: document.querySelector('.repo__list'),
   profileBio: document.querySelector('.profile__bio'),
+  profileAvatar: document.querySelector('.profile__avatar--img'),
+  profileName: document.querySelector('.profile__name--name'),
+  profileUsername: document.querySelector('.profile__name--username'),
+  profileThumb: document.querySelector('.user-menu__avatar'),
 };
 
 export const query = (username: string): string => {
@@ -35,6 +39,8 @@ export const query = (username: string): string => {
   user(login: "${username}") {
     bioHTML
     avatarUrl
+    name
+    login
   }
 }
 `;

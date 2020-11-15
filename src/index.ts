@@ -11,5 +11,5 @@ import { UI } from './classes';
     username: 'supacodes',
   });
 
-  new UI(repoList);
+  new UI(repoList, user);
 })();

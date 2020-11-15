@@ -2,44 +2,12 @@
 @import 'reset';
 
 body {
-  font-family: $font-stack;
-  font-size: $font-size-normal;
-}
-
-.dropdown__caret {
-  border: 4px solid transparent;
-  border-top: 4px solid inherit;
-  margin-left: 0.15rem;
-  margin-top: 0.4rem;
+  font: $font-size-normal $font-stack;
 }
 
 @import 'components/header';
-
-.wrapper {
-  border-bottom: 1px solid #d8d8d8;
-  overflow: auto;
-}
-
-.sticky {
-  width: $page-width;
-  display: flex;
-  margin: auto;
-  margin-top: 2.4rem;
-  position: sticky;
-  top: 0;
-}
-
-.empty-column {
-  width: $side-column-width;
-}
-
-.content {
-  margin: auto;
-  max-width: $page-width;
-  display: flex;
-}
-
+@import './components/utils';
 @import 'components/aside';
-
 @import 'components/tabs';
 @import 'components/overview';
+@import 'components/responsive';

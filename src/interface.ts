@@ -1,4 +1,4 @@
-export interface Repo {
+export interface IRepo {
   node: {
     name: string;
     descriptionHTML: string;
@@ -13,4 +13,11 @@ export interface Repo {
     stargazerCount: number;
     url: string;
   };
+}
+
+export interface IUser {
+  avatarUrl: string;
+  name: string;
+  login: string;
+  bioHTML: string;
 }

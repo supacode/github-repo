@@ -1,10 +1,11 @@
 import icons from './icons';
 import { elements } from './globals';
-import { Repo } from './interface';
+import { IUser, IRepo } from './interface';
 
 export class UI {
-  constructor(private data: Repo[]) {
+  constructor(private data: IRepo[], private user: IUser) {
     this.appendRepoList();
+    this.renderUserMarkup(this.user);
   }
 
   public appendRepoList(): void {
@@ -14,6 +15,22 @@ export class UI {
         `<p>${this.repoListMarkup(el)}</p>`,
       );
     });
+  }
+
+  private renderUserMarkup(user: IUser) {
+    const bioEl = elements.profileBio as HTMLParagraphElement;
+    const avatarEl = elements.profileAvatar as HTMLImageElement;
+    const usernameEl = elements.profileUsername as HTMLHeadingElement;
+    const nameEl = elements.profileName as HTMLHeadElement;
+    const profileThumb = elements.profileThumb as HTMLImageElement;
+
+    avatarEl.src = user.avatarUrl;
+    profileThumb.src = user.avatarUrl;
+
+    avatarEl.alt = `Picture of ${user.name || user.login}`;
+    usernameEl.textContent = user.login;
+    nameEl.textContent = user.name;
+    bioEl.innerHTML = `<span>${user.bioHTML}</span>`;
   }
 
   private repoListMarkup({
@@ -27,14 +44,19 @@ export class UI {
       updatedAt,
       url,
     },
-  }: Repo) {
+  }: IRepo) {
     return `<div class="repo">
+
+
+              <div>
               <h2 class="repo__name">
                 <a href="${url}" rel="noreferrer" target="_blank"> ${name} </a>
               </h2>
-              <p class="repo__desc">
+              
+              <div class="repo__desc">
                 ${descriptionHTML}
-              </p>
+              </div>
+
               <ul class="repo__info">
               ${
                 language[0]?.color && language[0]?.color
@@ -92,6 +114,17 @@ export class UI {
                       year: 'numeric',
                     })}</li>
               </ul>
+              </div>
+                  
+              <button class="btn">
+                    <span>
+                      ${icons.stargazersIcon} 
+                    </span>
+                    <span>
+                      Star
+                    </span>
+              </button>
+
             </div>`;
   }
 }

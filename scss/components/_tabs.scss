@@ -1,35 +1,52 @@
 .tabs {
   display: flex;
   align-items: center;
-  top: 0;
-
-  svg {
-    margin-right: 1rem;
-    margin-bottom: -3px;
-    path {
-      stroke: $grey;
-    }
-  }
+  overflow: auto;
 
   &__item {
     border-bottom: 2px solid transparent;
     transition: 0.4s ease-out border;
 
+    &--icon {
+      svg {
+        margin-right: 0.6rem;
+        width: 14px;
+        height: 14px;
+        margin-bottom: -3px;
+        path {
+          fill: $grey-300;
+          stroke-width: 0;
+        }
+      }
+    }
+
+    &--text {
+      font-size: 0.83rem;
+      &--active {
+        font-weight: 600;
+      }
+    }
+
     &:hover {
-      border-bottom-color: $grey;
+      border-bottom-color: $grey-300;
     }
 
     &--active {
       border-bottom-color: #f9826c;
-      font-weight: 550;
+      font-weight: 600;
 
       svg {
         path {
+          fill: $dark;
           stroke-width: 0;
           stroke: $dark;
         }
       }
     }
+  }
+
+  li {
+    margin-top: 1rem;
   }
 
   li a {

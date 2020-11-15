@@ -58,10 +58,11 @@
     li a {
       text-decoration: none;
       color: $white;
+      font-size: 0.9rem;
       font-weight: 550;
       &:focus,
       &:hover {
-        color: $grey;
+        color: $grey-300;
       }
     }
   }
