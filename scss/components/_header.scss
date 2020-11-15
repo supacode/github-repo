@@ -9,7 +9,6 @@
   &__logo {
     align-items: center;
     margin-right: 1rem;
-    display: flex;
     &--icon {
       height: 32px;
       width: 32px;
@@ -51,6 +50,11 @@
 
   //
   .main-nav {
+    &__avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 40%;
+    }
     li {
       display: inline-block;
       margin-right: 1rem;
@@ -58,11 +62,19 @@
     li a {
       text-decoration: none;
       color: $white;
+      display: flex;
+      align-items: center;
       font-size: 0.9rem;
       font-weight: 550;
       &:focus,
       &:hover {
         color: $grey-300;
+      }
+
+      svg {
+        path {
+          fill: $white;
+        }
       }
     }
   }

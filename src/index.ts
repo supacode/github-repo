@@ -1,7 +1,7 @@
 const API_URL = 'https://api.github.com/graphql';
 const OAUTH_TOKEN = '';
 
-import { getData } from './globals';
+import { getData, elements } from './globals';
 import { UI } from './classes';
 
 (async () => {
@@ -13,3 +13,13 @@ import { UI } from './classes';
 
   new UI(repoList, user);
 })();
+
+elements.hamburgerBtn?.addEventListener('click', e => {
+  e.preventDefault();
+
+  const { mainNav, siteHeader, searchForm } = elements;
+
+  siteHeader?.classList.toggle('multi-rows');
+  mainNav?.classList.toggle('main-nav__hidden');
+  searchForm?.classList.toggle('search-form__hidden');
+});

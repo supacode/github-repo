@@ -67,3 +67,12 @@
     margin-right: 0.3rem;
   }
 }
+.md__show {
+  display: block;
+}
+
+@media screen and (min-width: $md-viewport) {
+  .lg__hide {
+    display: none !important;
+  }
+}

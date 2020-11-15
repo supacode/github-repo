@@ -23,12 +23,16 @@ export class UI {
     const usernameEl = elements.profileUsername as HTMLHeadingElement;
     const nameEl = elements.profileName as HTMLHeadElement;
     const profileThumb = elements.profileThumb as HTMLImageElement;
+    const usernameMenu = elements.userMenuName as HTMLElement;
+    const mainNavAvatar = elements.mainNavAvatar as HTMLImageElement;
 
     avatarEl.src = user.avatarUrl;
     profileThumb.src = user.avatarUrl;
+    mainNavAvatar.src = user.avatarUrl;
 
     avatarEl.alt = `Picture of ${user.name || user.login}`;
     usernameEl.textContent = user.login;
+    usernameMenu.textContent = user.login;
     nameEl.textContent = user.name;
     bioEl.innerHTML = `<span>${user.bioHTML}</span>`;
   }

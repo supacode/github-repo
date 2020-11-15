@@ -5,6 +5,12 @@ export const elements = {
   profileName: document.querySelector('.profile__name--name'),
   profileUsername: document.querySelector('.profile__name--username'),
   profileThumb: document.querySelector('.user-menu__avatar'),
+  hamburgerBtn: document.querySelector('.hamburger__btn'),
+  mainNav: document.querySelector('.main-nav'),
+  searchForm: document.querySelector('.search-form'),
+  siteHeader: document.querySelector('.header'),
+  userMenuName: document.querySelector('.user-menu__username'),
+  mainNavAvatar: document.querySelector('.main-nav__avatar'),
 };
 
 export const query = (username: string): string => {
@@ -45,6 +51,44 @@ export const query = (username: string): string => {
 }
 `;
 };
+// export const query = (username: string): string => {
+//   return `
+//   query {
+//     viewer {
+//       login
+//       repositories(privacy: PUBLIC, last: 20) {
+//       edges {
+//         node {
+//           id
+//           name
+//           descriptionHTML
+//           updatedAt
+//           forkCount
+//           stargazerCount
+//           languages(first: 1) {
+//             nodes {
+//               color
+//               name
+//             }
+//           }
+//           licenseInfo {
+//             name
+//           }
+//           url
+//         }
+//       }
+//     }
+//     url
+//   }
+//   user(login: "${username}") {
+//     bioHTML
+//     avatarUrl
+//     name
+//     login
+//   }
+// }
+// `;
+// };
 
 export const getData = async (params: {
   fetchUrl: string;
