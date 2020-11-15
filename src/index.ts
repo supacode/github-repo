@@ -1,5 +1,5 @@
 const API_URL = 'https://api.github.com/graphql';
-const OAUTH_TOKEN = '8b2618aa2e4ec6b893912243de5e487b55ce58ba';
+const OAUTH_TOKEN = '';
 
 import { getData, elements } from './globals';
 import { UI } from './classes';
