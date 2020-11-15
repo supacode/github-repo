@@ -3,6 +3,17 @@
   align-items: center;
   overflow: auto;
 
+  &__count {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: $dark;
+    background: $grey-100;
+    padding: 0.1rem 0.5rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
   &__item {
     border-bottom: 2px solid transparent;
     transition: 0.4s ease-out border;
@@ -22,8 +33,11 @@
 
     &--text {
       font-size: 0.83rem;
+      display: flex;
+
       &--active {
         font-weight: 600;
+        border-bottom: 2px solid #f9826c;
       }
     }
 
@@ -32,7 +46,6 @@
     }
 
     &--active {
-      border-bottom-color: #f9826c;
       font-weight: 600;
 
       svg {

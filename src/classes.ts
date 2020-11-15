@@ -52,6 +52,8 @@ export class UI {
     return `<div class="repo">
 
 
+              <div class="repo__item">
+
               <div>
               <h2 class="repo__name">
                 <a href="${url}" rel="noreferrer" target="_blank"> ${name} </a>
@@ -60,6 +62,21 @@ export class UI {
               <div class="repo__desc">
                 ${descriptionHTML}
               </div>
+
+              
+              </div>
+                  
+              <button class="btn">
+                    <span>
+                      ${icons.stargazersIcon} 
+                    </span>
+                    <span>
+                      Star
+                    </span>
+              </button>
+
+              </div>
+
 
               <ul class="repo__info">
               ${
@@ -118,17 +135,6 @@ export class UI {
                       year: 'numeric',
                     })}</li>
               </ul>
-              </div>
-                  
-              <button class="btn">
-                    <span>
-                      ${icons.stargazersIcon} 
-                    </span>
-                    <span>
-                      Star
-                    </span>
-              </button>
-
             </div>`;
   }
 }
