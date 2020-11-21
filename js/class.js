@@ -1,3 +1,6 @@
+/**
+ * A user model class
+ */
 class User {
   constructor({ username, name, avatarUrl, bioHTML, repoList }) {
     this.username = username;
@@ -8,12 +11,23 @@ class User {
   }
 }
 
+/**
+ * Class to help replace single or
+ * multi elements text, HTML
+ * content or attributes
+ **/
 class UI {
-  // Utility method to validate DOM selections, almost like a decorator
-
+  /**
+   * Change text for a single DOM element
+   * or entire NodeList (multiple selections)
+   * @param {string} selector A single DOM Element or NodeList,
+   * a NodeList will replace all element's in the list's text.
+   * @param {string} val Value to replace text
+   * @static
+   */
   static setText({ selector, val }) {
-    // Set text if selector is an iterable
     try {
+      // Set text if selector is an iterable
       if (typeof selector[Symbol.iterator] === 'function') {
         return [...selector].forEach(el => (el.innerText = val));
       }
@@ -24,22 +38,13 @@ class UI {
     }
   }
 
-  static setAllText({ selector, val }) {
-    try {
-      [...selector].forEach(el => (el.innerText = val));
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  static setAttr({ selector, attr, val }) {
-    try {
-      selector.setAttribute(attr, val);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
+  /**
+   * Change HTML attribute for a single element
+   * @param {string} selector A single DOM Element
+   * @param {string} val Attribute's new value
+   * @param {string} attr Attribute to change
+   * @static
+   */
   static setAttr({ selector, attr, val }) {
     try {
       [...selector].forEach(el => {
@@ -50,17 +55,17 @@ class UI {
     }
   }
 
+  /**
+   * Change HTML content for a single element
+   * @param {string} selector A single DOM Element
+   * @param {string} val new HTML to replace old content
+   * @static
+   */
   static setHTML({ selector, val }) {
     try {
       selector.innerHTML = val;
     } catch (err) {
       console.log(err);
     }
-  }
-
-  static appendList({ selector, data, position }) {
-    data.forEach(el => {
-      selector.insertAdjacentHTML(position, data);
-    });
   }
 }

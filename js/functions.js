@@ -1,40 +1,8 @@
-const query = username => `
-query {
-  viewer {
-    login
-    repositories(privacy: PUBLIC, last: 20) {
-    edges {
-      node {
-        id
-        name
-        descriptionHTML
-        updatedAt
-        forkCount
-        stargazerCount
-        languages(first: 1) {
-          nodes {
-            color
-            name
-          }
-        }
-        licenseInfo {
-          name
-        }
-        url
-      }
-    }
-  }
-  url
-}
-user(login: "${username}") {
-  bioHTML
-  avatarUrl
-  name
-  login
-}
-}`;
-
-const getData = async url => {
+/**
+ * Fetch GraphQL data from Github API
+ * @param {string} username
+ */
+const getData = async username => {
   try {
     const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
@@ -42,21 +10,19 @@ const getData = async url => {
         Authorization: `Bearer ${OAUTH_TOKEN}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query: query('supacodes') }),
+      body: JSON.stringify({ query: query(username) }),
     });
 
     const {
       data: {
-        user: userData,
-        viewer: {
-          repositories: { edges: repoList },
+        user,
+        user: {
+          repositories: { edges: repositories },
         },
       },
     } = await res.json();
 
-    userData.repoList = repoList;
-
-    return { userData };
+    return { ...user, repositories };
   } catch (err) {
     console.log(err);
   }
@@ -72,8 +38,6 @@ const repoItemMarkup = ({
   updatedAt,
   url,
 }) => {
-  const markup = '';
-
   return `<div class="repo">
               <div class="repo__item">
               <div>
