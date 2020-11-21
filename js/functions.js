@@ -38,7 +38,23 @@ const repoItemMarkup = ({
   updatedAt,
   url,
 }) => {
-  return `<div class="repo">
+  const compareYear =
+    new Date().getFullYear() === new Date(updatedAt).getFullYear();
+
+  const dateFormatOptions = {
+    month: 'short',
+    day: 'numeric',
+    year: !compareYear ? 'numeric' : undefined,
+  };
+
+  // Format date
+  const formattedDate = new Date(updatedAt).toLocaleDateString(
+    'en-us',
+    dateFormatOptions,
+  );
+
+  if (new Date().getFullYear())
+    return `<div class="repo">
               <div class="repo__item">
               <div>
               <h2 class="repo__name">
@@ -108,11 +124,7 @@ const repoItemMarkup = ({
                 </li>`
                     : ''
                 }
-                <li title="${updatedAt}">Updated on 
-                    ${new Date(updatedAt).toLocaleDateString('en-us', {
-                      month: 'long',
-                      year: 'numeric',
-                    })}</li>
+                <li title="${updatedAt}">Updated on ${formattedDate}</li>
               </ul>
             </div>`;
 };
