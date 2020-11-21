@@ -9,9 +9,9 @@ class User {
 }
 
 class UI {
-  static setText({ selector, val }) {
-    if (!selector) return false;
+  // Utility method to validate DOM selections, almost like a decorator
 
+  static setText({ selector, val }) {
     // Set text if selector is an iterable
     try {
       if (typeof selector[Symbol.iterator] === 'function') {
@@ -25,20 +25,42 @@ class UI {
   }
 
   static setAllText({ selector, val }) {
-    [...selector].forEach(el => (el.innerText = val));
+    try {
+      [...selector].forEach(el => (el.innerText = val));
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   static setAttr({ selector, attr, val }) {
-    selector.setAttribute(attr, val);
+    try {
+      selector.setAttribute(attr, val);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   static setAttr({ selector, attr, val }) {
-    [...selector].forEach(el => {
-      el.setAttribute(attr, val);
-    });
+    try {
+      [...selector].forEach(el => {
+        el.setAttribute(attr, val);
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   static setHTML({ selector, val }) {
-    selector.innerHTML = val;
+    try {
+      selector.innerHTML = val;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  static appendList({ selector, data, position }) {
+    data.forEach(el => {
+      selector.insertAdjacentHTML(position, data);
+    });
   }
 }

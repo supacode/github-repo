@@ -57,4 +57,20 @@ const elements = {
     selector: elements.profileBio,
     val: maverick.bioHTML,
   });
+
+  maverick.repoList.forEach(repo => {
+    elements.repoList.insertAdjacentHTML(
+      'afterend',
+      repoItemMarkup({
+        descriptionHTML: repo.node.descriptionHTML,
+        languages: repo.node.languages,
+        forkCount: repo.node.forkCount,
+        updatedAt: repo.node.updatedAt,
+        licenseInfo: repo.node.licenseInfo,
+        name: repo.node.name,
+        stargazerCount: repo.node.stargazerCount,
+        url: repo.node.url,
+      }),
+    );
+  });
 })();
