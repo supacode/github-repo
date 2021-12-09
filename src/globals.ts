@@ -51,44 +51,6 @@ export const query = (username: string): string => {
 }
 `;
 };
-// export const query = (username: string): string => {
-//   return `
-//   query {
-//     viewer {
-//       login
-//       repositories(privacy: PUBLIC, last: 20) {
-//       edges {
-//         node {
-//           id
-//           name
-//           descriptionHTML
-//           updatedAt
-//           forkCount
-//           stargazerCount
-//           languages(first: 1) {
-//             nodes {
-//               color
-//               name
-//             }
-//           }
-//           licenseInfo {
-//             name
-//           }
-//           url
-//         }
-//       }
-//     }
-//     url
-//   }
-//   user(login: "${username}") {
-//     bioHTML
-//     avatarUrl
-//     name
-//     login
-//   }
-// }
-// `;
-// };
 
 export const getData = async (params: {
   fetchUrl: string;
